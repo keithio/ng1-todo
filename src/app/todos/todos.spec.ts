@@ -13,25 +13,25 @@ describe('TodoService', () => {
 
   it('should add a todo to the list', () => {
     const res: Todo[] = todoService.addTodo('Hello', todos);
-    expect(res.length).toEqual(2);
-    expect(res[0].id).toEqual(1);
+    expect(res.length).toEqual(5);
+    expect(res[0].id).toEqual(4);
   });
 
   it('should complete a todo', () => {
     const res: Todo[] = todoService.completeTodo(0, todos);
-    expect(res.length).toEqual(1);
-    expect(res[0].completed).toEqual(true);
+    expect(res.length).toEqual(4);
+    expect(res[0].completed).toEqual(false);
   });
 
   it('should delete a todo', () => {
     const res: Todo[] = todoService.deleteTodo(0, todos);
-    expect(res.length).toEqual(0);
+    expect(res.length).toEqual(3);
   });
 
   it('should edit a todo', () => {
     const res: Todo[] = todoService.editTodo(0, 'Changed it', todos);
-    expect(res.length).toEqual(1);
-    expect(res[0].text).toEqual('Changed it');
+    expect(res.length).toEqual(4);
+    expect(res[3].text).toEqual('Changed it');
   });
 
   it('should complete all todos', () => {
@@ -43,10 +43,10 @@ describe('TodoService', () => {
   });
 
   it('should clear all completed todos', () => {
-    let res: Todo[] = todoService.addTodo('Hello', todos);
-    res = todoService.completeTodo(0, res);
+    let res: Todo[] = todos;
     res = todoService.clearCompleted(res);
-    expect(res.length).toEqual(1);
+    expect(res.length).toEqual(2);
     expect(res[0].completed).toEqual(false);
+    expect(res[1].completed).toEqual(false);
   });
 });

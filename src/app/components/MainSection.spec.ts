@@ -40,10 +40,9 @@ describe('MainSection component', () => {
     expect(component.todoService.completeAll).toHaveBeenCalled();
   });
 
-  it('shoud set selectedFilter', () => {
+  it('shoud set filter', () => {
     component.handleShow('show_completed');
-    expect(component.selectedFilter.type).toEqual('show_completed');
-    expect(component.selectedFilter.filter({completed: true})).toEqual(true);
+    expect(component.filter).toEqual('show_completed');
   });
 
   it('shoud call completeTodo', () => {

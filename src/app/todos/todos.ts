@@ -8,14 +8,9 @@ export class Todo {
 
 export const initialTodos: Todo[] = [
   {
-    text: 'Follow the Angular Style Guide',
-    completed: true,
-    id: 0
-  },
-  {
-    text: 'Use a module loader like Webpack or SystemJS',
-    completed: true,
-    id: 1
+    text: 'Convert to Components',
+    completed: false,
+    id: 3
   },
   {
     text: 'Switch to TypeScript',
@@ -23,9 +18,14 @@ export const initialTodos: Todo[] = [
     id: 2
   },
   {
-    text: 'Convert to Components',
-    completed: false,
-    id: 3
+    text: 'Use a module loader like Webpack or SystemJS',
+    completed: true,
+    id: 1
+  },
+  {
+    text: 'Follow the Angular Style Guide',
+    completed: true,
+    id: 0
   }
 ];
 
